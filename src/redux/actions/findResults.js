@@ -1,8 +1,10 @@
 export const type = 'findResults'
 
-export default findResults = text => {
+const findResults = text => {
     return{
         type,
         payload: text
     }
 }
+
+export default findResults

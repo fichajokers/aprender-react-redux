@@ -1,8 +1,9 @@
 export const type = 'findSuggestions'
 
-export default findSuggestions = text => {
+const findSuggestions = text => {
     return{
         type,
         payload: text
     }
 }
+export default findSuggestions
