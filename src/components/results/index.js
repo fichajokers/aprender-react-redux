@@ -1,22 +1,33 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import Page from './page'
+import {withRouter} from 'react-router-dom'
+import './styles.css'
 
 class Results extends Component {
+
+    goTo = (ruta) => {
+        this.props.history.push(ruta)
+    }
+
     render() {
-        const { suggestions } = this.props
-        console.log(suggestions)
+        const { results } = this.props
 
         return (
-            <Page />
+            <Page 
+                results={results} 
+                goTo={this.goTo}
+            />
         )
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        suggestions: state.suggestions
+        results: state.results
     } 
 }
 
-export default connect(mapStateToProps)(Results)
+export default withRouter(
+    connect(mapStateToProps)(Results)
+)
