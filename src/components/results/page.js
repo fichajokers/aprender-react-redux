@@ -12,7 +12,7 @@ export default function Page(props) {
     } = props
 
     const isEmpty = results.length === 0
-    console.log(results)
+    
     return (
         <Fragment>
             { /** reinicia los estilos que causan conflitcos en las paginas */ }

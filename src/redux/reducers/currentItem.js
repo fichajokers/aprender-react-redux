@@ -4,8 +4,7 @@ const defaultState = {};
 
 function reducer( state = defaultState, { type, payload }) {
     switch (type) {
-        case findCurrentItemType: {
-            console.log("asdfasd")
+        case findCurrentItemType: {            
             return items.find(item => item.id === payload)
         }
         default: 
